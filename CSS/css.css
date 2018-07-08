@@ -1,0 +1,80 @@
+
+
+h1 {font-style:italic;
+    font-weight:bold;
+    font-size:2em;
+    color:#440f0f;
+    font-family:'Courier New';}
+
+body {font-family: 'gabriola';
+    font-weight:bold;
+    font-size:40px;
+    color:#440f0f;
+    text-align: center; 
+    background-image: url("Background.jpg");}
+
+
+/* EFECTO BARREDORA TITLE */  
+.texto{margin: auto;  display: table;}
+
+h1 {float: left;
+  color: #440f0f;
+  position: relative;}
+h1 span {position: absolute;
+        right: 0;
+        width: 0;
+        background: #a1c2af;
+        border-left: 2px solid #000;
+
+ animation: write 5s infinite alternate; /*Comienza un animacion llamada write la cual debe durar
+ 5 segundos, que se repita infinitas veces y se devuelva (alternate) */
+
+}
+
+@keyframes write {
+ from {width: 200%} to {width: 0%} /*De 100% reduce tu ancho a 0% */
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 450px;
+  height: 280px;
+  left:40%;
+  top:40%;
+  
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgb(66, 138, 88);
+  overflow: hidden;
+  width: 450px;
+  height:0;
+  transition: .5s ease;
+}
+
+.container:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.text {
+  white-space: nowrap; 
+  color: #5a2121;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
